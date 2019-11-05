@@ -4,7 +4,7 @@ import os
 
 
 def main():
-	result_file = open('results/'+"loudness.txt", 'w')
+	result_file = open('results/loudness_'+Src+".txt", 'w')
 	for filename in os.listdir(Src):
 		data, rate = sf.read(Src+'/'+filename)
 		meter = pyln.Meter(rate)
