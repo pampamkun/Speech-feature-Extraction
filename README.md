@@ -1,4 +1,4 @@
-# Sound-feature-Extraction
+# Speech-feature-Extraction
 This folder will be all about extracting features of voice / sound using python
 
 These scripts development is under python3 (3.6)
