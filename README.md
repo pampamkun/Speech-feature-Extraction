@@ -7,4 +7,4 @@ Each scripts are all independent, by all mean, they are all standalone. You can 
 
 The command should be as basic as : python3 [script_name]
 
-For batch processing, it will process all possible file inside a folder. You just need to input folder name where your audio files are located
+For batch processing, it will process all possible file inside a folder. You will be asked to input the folder name where your audio files are located
