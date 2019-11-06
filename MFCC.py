@@ -16,6 +16,7 @@ def main():
 	print(fname," MFCC -> ", mfcc)
 	plt.plot(mfcc)
 	plt.ylabel('mfcc')
+	plt.savefig('plot.png', dpi=1000)
 	plt.show()
 		
 path = "results"
