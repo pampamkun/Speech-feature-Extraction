@@ -6,16 +6,17 @@ import matplotlib.pyplot as plt
 import sys
 import numpy
 import xlsxwriter
+from tqdm import tqdm
 numpy.set_printoptions(threshold=sys.maxsize)
 
 
 def main():
-
+	print("Progressing your wish : ")
 	result_file = open(path+'/MFCC_'+Src+".txt", 'w')
 	i = 0
 	row = 0
 	col = 0
-	for filename in os.listdir(Src):
+	for filename in tqdm(os.listdir(Src)):
 		name,ext = os.path.splitext(filename)
 		str_name = str(name)
 		waveform, sampling_rate = librosa.load(Src+'/'+filename)
@@ -29,8 +30,7 @@ def main():
 		mfcc_value =str(mfcc)
 		result_file.write(source_file +" "+mfcc_value+'\n')
 		i+=1
-		print("col =",col)
-	#	print(filename," MFCC -> ", mfcc)
+	#	print(filename," MFCC -> ", mfcc) <- This line usage just for you who likes to see numbers passing by your CLI
 		plt.plot(mfcc)
 		plt.ylabel('mfcc')
 		plt.savefig(path+"/"+str_name+'.png', dpi=1000)
