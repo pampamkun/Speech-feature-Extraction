@@ -2,11 +2,12 @@ import soundfile as sf
 import pyloudnorm as pyln
 import os
 import librosa
+from tqdm import tqdm
 
 
 def main():
 	result_file = open('results/MFCC_'+Src+".txt", 'w')
-	for filename in os.listdir(Src):
+	for filename in tqdm(os.listdir(Src)):
 		waveform, sampling_rate = librosa.load(Src+'/'+filename)
 		hop_length = 512
 		tempo, beat_frames = librosa.beat.beat_track(y = waveform, sr = sampling_rate)	
@@ -14,9 +15,9 @@ def main():
 		source_file = str(filename)
 		mfcc_value =str(mfcc)
 		result_file.write(source_file +" "+mfcc_value+'\n')
-		print(filename," MFCC -> ", mfcc)
 		
 
+numpy.set_printoptions(threshold=sys.maxsize)
 path = "results"
 if os.path.exists(path)==False:
     os.mkdir(path)
