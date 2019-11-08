@@ -16,7 +16,6 @@ def main():
 	row = 0
 	result_file = open(path+'/MFCC_'+Src+".txt", 'w')
 	for filename in tqdm(os.listdir(Src)):
-		print("Progressing "+filename)
 		name,ext = os.path.splitext(filename)
 		str_name = str(name)
 		waveform, sampling_rate = librosa.load(Src+'/'+filename)
