@@ -9,8 +9,6 @@ import numpy
 import xlsxwriter
 from tqdm import tqdm
 numpy.set_printoptions(threshold=sys.maxsize)
-
-
 def main():
 	col = 0
 	row = 0
@@ -30,9 +28,6 @@ def main():
 		plt.plot(mfcc)
 		plt.ylabel('mfcc')
 		plt.savefig(path+"/"+str_name+'.png', dpi=1000)
-
-
-
 if __name__ == '__main__':
     Src = input("Dataset Folder : ")
     path = input("Destinated Folder : ")
