@@ -42,7 +42,7 @@ if __name__ == '__main__':
     if os.path.exists(path)==False:
     		os.mkdir(path)
 		
-    workbook = xlsxwriter.Workbook(path+"/"+"MFCC"+'.xlsx')
+    workbook = xlsxwriter.Workbook(path+"/"+"MFCC_"+Src+'.xlsx')
     worksheet = workbook.add_worksheet()
     main()
 workbook.close()
